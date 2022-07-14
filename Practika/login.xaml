@@ -1,0 +1,55 @@
+﻿<Page x:Class="Practika.login"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practika"
+      mc:Ignorable="d" 
+      Width="1920" Height="1040"
+      Title="Авторизация"   
+      WindowTitle="Авторизация">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" Text="Авторизация" VerticalAlignment="Top" Height="55" Width="296" RenderTransformOrigin="0.495,1.202"  FontFamily="Arial" FontSize="35" TextAlignment="Center" Margin="252,80,252,0" FontWeight="Bold"/>
+        <TextBox x:Name="Logn"
+                 BorderBrush="#DADADA"
+            HorizontalAlignment="Center" 
+                 Height="50" Margin="833,184,833,0" 
+                 GotFocus="Logn_GotFocus"
+                 LostFocus="Logn_LostFocus"
+                 Text="Логин" 
+                 VerticalAlignment="Top" 
+                 Width="254" 
+                 RenderTransformOrigin="0.514,0.064" VerticalContentAlignment="Center" FontSize="23"/>
+        <TextBox x:Name="Pass"
+                 BorderBrush="#DADADA"
+            HorizontalAlignment="Center" 
+            Height="50" Margin="833,272,833,0" 
+            GotFocus="Pass_GotFocus"
+            LostFocus="Pass_LostFocus"
+            Text="Пароль" 
+            VerticalAlignment="Top" 
+            Width="254" 
+            RenderTransformOrigin="0.514,0.064" VerticalContentAlignment="Center" FontSize="23" />
+        <Button Content="ВОЙТИ"
+                Background="#CDFA57"
+                FontSize="16"
+                Foreground="White"
+                Click="Enter_Click" Margin="833,376,833,580" RenderTransformOrigin="0.245,-0.102"/>
+        <TextBlock x:Name="InfoXaml"
+                   Text=""
+                   FontSize="18"
+                   HorizontalAlignment="Center"
+                   TextAlignment="Center"
+                   Foreground="Red"
+                   IsHitTestVisible="False"
+                   Margin="760,488,760,434"
+                   Width="330"/>
+        <Button Content="Регистрация"
+            Background="#CDFA57"
+            FontSize="16"
+            Foreground="White"
+            Click="Reg_Click" Margin="1566,376,100,580" RenderTransformOrigin="0.245,-0.102"/>
+
+    </Grid>
+</Page>

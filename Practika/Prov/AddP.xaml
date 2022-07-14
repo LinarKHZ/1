@@ -1,0 +1,94 @@
+﻿<Page x:Class="Practika.Prov.AddP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Practika.Admin"
+      mc:Ignorable="d" 
+      Width="1920" Height="1040"
+      Title="AddP">
+
+    <Grid Background="White">
+        <TextBlock Text="Добавление Продукта"
+            FontSize="50"
+            Margin="70,28.751,960,953.248"
+            VerticalAlignment="Center" 
+            FontFamily="/Practika;component/Fonts/#Arial"/>
+        <TextBox x:Name="Name1"
+            Background="#DADADA"
+            BorderThickness="0" 
+            Opacity="0.6" 
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Foreground="#000000" 
+            FontSize="23" Margin="161,180,1327,800"/>
+        <TextBox x:Name="Photo1" 
+                 Background="#DADADA"
+            BorderThickness="0" 
+            Opacity="0.6" 
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Foreground="#000000" 
+            LostFocus="Photo_LostFocus"
+            FontSize="23" Margin="161,340,1335,640"/>
+        <TextBlock Background="#DADADA" HorizontalAlignment="Left" Margin="161,156,0,0" TextWrapping="Wrap" Text="Название продукта" VerticalAlignment="Top" Height="24" Width="210" FontFamily="/Practika;component/Fonts/#Arial" FontSize="23"/>
+        <TextBlock Background="#DADADA" HorizontalAlignment="Left" Margin="161,316,0,0" TextWrapping="Wrap" Text="Адрес фото" VerticalAlignment="Top" Height="24" Width="210" FontFamily="/Practika;component/Fonts/#Arial" FontSize="23"/>
+        <DatePicker x:Name="dataAdd"
+                    Background="#DADADA"
+            Opacity="0.6" 
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Foreground="#000000" 
+            FontSize="23" Margin="161,496,0,0"  Padding="0" VerticalContentAlignment="Center" RenderTransformOrigin="1,1" VerticalAlignment="Top" HorizontalAlignment="Left" Width="420.5" Height="65" UseLayoutRounding="False" />
+        <TextBlock Background="#DADADA" HorizontalAlignment="Left" Margin="161,472,0,0" TextWrapping="Wrap" Text="Адрес фото" VerticalAlignment="Top" Height="24" Width="210" FontFamily="/Practika;component/Fonts/#Arial" FontSize="23"/>
+        <TextBox x:Name="Comment" 
+            Background="#DADADA"
+            BorderThickness="0" 
+            Opacity="0.6" 
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Foreground="#000000" 
+            FontSize="23" Margin="161,659,301,261"/>
+        <TextBlock Background="#DADADA" HorizontalAlignment="Left" Margin="161,635,0,0" TextWrapping="Wrap" Text="Комментарии" VerticalAlignment="Top" Height="24" Width="210" FontFamily="/Practika;component/Fonts/#Arial" FontSize="23"/>
+        <Button Content="Добавить"
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Background="#89AD2B"
+            Foreground="White"
+            FontSize="23"
+            Width="200
+                "
+            HorizontalAlignment="Left"
+            Margin="441,889,0,80"
+            Click="Add_Click"/>
+        <Button Content="Отмена"
+            FontFamily="/Practika;component/Fonts/#Arial"
+            Background="#89AD2B"
+            Foreground="White"
+            FontSize="23"
+            Width="200                 "
+            HorizontalAlignment="Left"
+            Margin="1281,889,0,80"
+            Click="Esc"/>
+        <ComboBox x:Name="TypeUnitBox"                  
+                  DisplayMemberPath="Name"
+                  SelectedItem="{Binding TypeUnit}"
+                  FontSize="30" 
+                  Margin="642,482,1042,478"
+                  GotFocus="typeUnit_GotFocus"
+                  LostFocus="typeUnit_LostFocus"/>
+        <ComboBox x:Name="CountryBox"
+                  Background="#DADADA"
+                  FontSize="23" 
+                  IsEditable="True"
+                  IsReadOnly="True"
+                  Margin="724,159,960,801">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox x:Name="check" Content="{Binding Name}"
+                              IsChecked="{Binding IsChecked}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Image x:Name="ProductPhoto"
+               Source = "{Binding Photo}"
+               Margin="1117,61,117,479" Height="500"/>
+        <Button x:Name="photoclick" Content="Добавить" HorizontalAlignment="Left" Margin="584,348,0,0" VerticalAlignment="Top" Width="63" Height="53" Click="photoclick_Click" BorderBrush="{x:Null}" Background="#7FDADADA"/>
+
+    </Grid>
+</Page>
